@@ -1,0 +1,104 @@
+section.py-5 {
+    width: 80%; /* Chiếm 80% chiều rộng trang */
+    max-width: 800px; /* Chiều rộng tối đa là 800px */
+    margin: 20px auto; /* Canh giữa section theo chiều ngang */
+    padding: 20px;
+    border: 1px solid #ddd; /* Thêm viền để dễ nhìn */
+    border-radius: 5px; /* Bo tròn góc */
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1); /* Tạo bóng đổ */
+}
+
+section.py-5 h2 {
+    text-align: center; /* Canh giữa tiêu đề */
+    margin-bottom: 20px;
+    color: #333;
+}
+
+section.py-5 label {
+    display: block; /* Mỗi label trên một dòng */
+    margin-bottom: 5px;
+    font-weight: bold; /* In đậm label */
+}
+
+section.py-5 input[type="text"],
+section.py-5 input[type="tel"],
+section.py-5 textarea {
+    width: calc(100% - 12px); /* Chiếm toàn bộ chiều rộng trừ padding và border */
+    padding: 8px;
+    margin-bottom: 10px;
+    border: 1px solid #ddd;
+    border-radius: 3px;
+    box-sizing: border-box; /* Để padding không làm tăng chiều rộng */
+    font-size: 16px; /* Tăng kích thước chữ */
+}
+
+section.py-5 textarea {
+    height: 100px; /* Chiều cao cho textarea */
+    resize: vertical; /* Cho phép kéo chiều cao */
+}
+
+.payment-buttons {
+    text-align: center; /* Canh giữa các nút thanh toán */
+    margin-top: 20px;
+}
+
+.payment-buttons button {
+    padding: 10px 20px;
+    margin: 5px;
+    border: none;
+    background-color: #007bff; /* Màu xanh dương */
+    color: white;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background-color 0.3s ease; /* Hiệu ứng chuyển màu */
+}
+
+.payment-buttons button:hover {
+    background-color: #0056b3; /* Màu xanh dương đậm hơn khi hover */
+}
+header {
+    width: 80%;
+    max-width: 800px;
+    margin: 20px auto;
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+header h1 {
+    text-align: center;
+    margin-bottom: 20px;
+    color: #333;
+}
+
+#cart-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+}
+
+#cart-table th,
+#cart-table td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: left;
+}
+
+#cart-table th {
+    background-color: #f2f2f2;
+    font-weight: bold; /* In đậm tiêu đề bảng */
+}
+
+#cart-table img {
+    max-width: 80px;
+    height: auto;
+    display: block; /* Để ảnh không bị lệch hàng */
+    margin: 0 auto; /* Canh giữa ảnh trong ô */
+}
+
+.total {
+    font-weight: bold;
+    text-align: right;
+    margin-top: 10px; /* Tạo khoảng cách với bảng */
+}

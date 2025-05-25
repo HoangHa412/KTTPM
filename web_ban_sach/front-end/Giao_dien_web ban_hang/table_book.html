@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quản lý Sách</title>
+    <style>
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            display: none; /* Ẩn bảng ban đầu */
+        }
+        table, th, td {
+            border: 1px solid black;
+        }
+        th, td {
+            padding: 8px;
+            text-align: left;
+        }
+    </style>
+    <script>
+        function goBack() {
+            window.history.back(); // Quay lại trang trước đó
+        }
+    </script>
+</head>
+<body>
+
+<h1>Danh sách Sách</h1>
+<!-- <button id="fetch-button">Hiện thị danh sách sách</button> Nút để gọi hàm -->
+<button onclick="goBack()">Quay lại</button> <!-- Nút để gọi hàm -->
+<table id="books-table">
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>Tên Sách</th>
+            <th>Số Trang</th>
+            <th>ID Tác Giả</th>
+            <th>ID Thể Loại</th>
+        </tr>
+    </thead>
+    <tbody>
+        <!-- Dữ liệu sách sẽ được thêm vào đây -->
+    </tbody>
+</table>
+
+<script>
+    async function fetchBooks() {
+        try {
+            const response = await fetch('http://127.0.0.1:5000/book-management/books');
+            if (!response.ok) {
+                throw new Error('Mạng không phản hồi');
+            }
+            const books = await response.json();
+            const tableBody = document.getElementById('books-table').querySelector('tbody');
+
+            // Xóa nội dung hiện tại
+            tableBody.innerHTML = '';
+
+            // Thêm từng sách vào bảng
+            books.forEach(book => {
+                const row = document.createElement('tr');
+                row.innerHTML = `
+                    <td>${book.id}</td>
+                    <td>${book.name}</td>
+                    <td>${book.page_count}</td>
+                    <td>${book.author_id}</td>
+                    <td>${book.category_id}</td>
+                `;
+                tableBody.appendChild(row);
+            });
+
+            // Hiện bảng sau khi đã thêm dữ liệu
+            document.getElementById('books-table').style.display = 'table'; 
+        } catch (error) {
+            alert('Có lỗi xảy ra: ' + error.message);
+        }
+    }
+
+    // Gọi hàm fetchBooks khi nút được nhấn
+    // document.getElementById('fetch-button').addEventListener('click', fetchBooks);
+        
+        window.onload = fetchBooks;
+
+</script>
+
+</body>
+</html>

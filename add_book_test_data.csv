@@ -1,0 +1,26 @@
+STT,Test_Case,Book_Name,Page_Count,Author_ID,Category_ID,Book_Cover,Expected,Description
+1,Thêm sách hợp lệ,Lap trinh Python co ban,250,TG001,1,book1.jpg,PASS,Tất cả thông tin hợp lệ
+2,Tên sách để trống,,250,TG001,1,book1.jpg,FAIL,Không nhập tên sách
+3,Số trang để trống,Lap trinh Java,,TG002,2,book2.jpg,FAIL,Không nhập số trang
+4,ID tác giả để trống,Lap trinh C++,300,,3,book3.jpg,FAIL,Không nhập ID tác giả
+5,Thể loại để trống,Lap trinh JavaScript,200,TG003,,book4.jpg,FAIL,Không nhập thể loại
+6,Tất cả trường trống,,,,,,FAIL,Không điền gì cả
+7,Số trang âm,Toan cao cap 1,-50,TG004,1,book5.jpg,FAIL,Số trang không thể âm
+8,Số trang bằng 0,Toan cao cap 2,0,TG005,2,book6.jpg,FAIL,Số trang phải lớn hơn 0
+9,Số trang quá lớn,Từ điển Anh Việt,999999,TG006,3,book7.jpg,FAIL,Số trang quá lớn
+10,Tên sách quá dài,Lorem ipsum dolor sit amet consectetur adipiscing elit sed do eiusmod tempor incididunt ut labore et dolore magna aliqua,300,TG007,1,book8.jpg,FAIL,Tên sách quá dài
+11,ID tác giả có ký tự đặc biệt,Lịch sử Việt Nam,400,TG@#$,2,book9.jpg,FAIL,ID tác giả chứa ký tự đặc biệt
+12,Thể loại âm,Văn học Việt Nam,350,TG008,-1,book10.jpg,FAIL,Thể loại không thể âm
+13,Thể loại bằng 0,Khoa học tự nhiên,280,TG009,0,book11.jpg,FAIL,Thể loại phải lớn hơn 0
+14,Thể loại quá lớn,Địa lý thế giới,320,TG010,99999,book12.jpg,FAIL,Thể loại vượt quá giới hạn
+15,Số trang có chữ,Hóa học đại cương,abc,TG011,4,book13.jpg,FAIL,Số trang phải là số
+16,Thể loại có chữ,Vật lý đại cương,450,TG012,abc,book14.jpg,FAIL,Thể loại phải là số
+17,Tên sách có ký tự đặc biệt,@#$ Toán học $%^,300,TG013,1,book15.jpg,PASS,Tên sách có thể chứa ký tự đặc biệt
+18,ID tác giả số,Sinh học đại cương,380,123456,2,book16.jpg,PASS,ID tác giả là số
+19,Không có file bìa,Triết học Mác Lênin,200,TG014,3,,PASS,Không upload file bìa
+20,Số trang rất nhỏ,Truyện ngắn,1,TG015,4,book17.jpg,PASS,Sách chỉ có 1 trang
+21,Tên sách có số,Toán 12 nâng cao,500,TG016,1,book18.jpg,PASS,Tên sách chứa số
+22,Tên sách tiếng Anh,Advanced Mathematics,600,TG017,1,book19.jpg,PASS,Tên sách bằng tiếng Anh
+23,ID tác giả tiếng Anh,English Grammar,250,AUTHOR001,2,book20.jpg,PASS,ID tác giả bằng tiếng Anh
+24,Tên sách có khoảng trắng đầu cuối,  Kinh tế học đại cương  ,400,TG018,3,book21.jpg,PASS,Tên sách có space đầu cuối
+25,Số trang giới hạn trên,Bách khoa toàn thư,9999,TG019,1,book22.jpg,PASS,Số trang ở giới hạn cho phép 

@@ -1,0 +1,42 @@
+.slide-container {
+    display: flex;
+    justify-content: center; /* Căn giữa theo chiều ngang */
+    align-items: center; /* Căn giữa theo chiều dọc */
+    height: 100%; /* Đảm bảo chiều cao 100% để căn giữa đúng */
+}
+.image {
+    display: flex;
+    justify-content: center; /* Căn giữa theo chiều ngang */
+    align-items: center; /* Căn giữa theo chiều dọc */
+}
+.book_img {
+    max-width: 100%; /* Đảm bảo ảnh không vượt quá kích thước của phần tử cha */
+    height: auto; /* Giữ tỷ lệ khung hình của ảnh */
+}
+
+.slide-container {
+    display: none; /* Ẩn tất cả các slide mặc định */
+}
+
+.slide-container.active {
+    display: block; /* Hiện slide active */
+}
+
+/* CSS để căn chỉnh các nút điều hướng */
+#prev, #next {
+    cursor: pointer;
+    font-size: 18px;
+    position: absolute;
+    top: 30%;
+    transform: translateY(-50%);
+    color: white;
+    z-index: 10;
+}
+
+#prev {
+    left: 10px; /* Căn bên trái */
+}
+
+#next {
+    right: 10px; /* Căn bên phải */
+}

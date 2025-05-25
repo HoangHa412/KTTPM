@@ -1,0 +1,16 @@
+STT,Test_Case,Username,Password,Expected,Description
+1,Test đăng nhập hợp lệ,admin,admin123,PASS,Username và password đúng
+2,Test password sai,admin,123456,FAIL,Password không đúng
+3,Test username sai,user123,admin123,FAIL,Username không tồn tại
+4,Test trường trống,,,FAIL,Cả hai trường đều trống
+5,Test email login,test@email.com,test123,FAIL,Thử đăng nhập bằng email
+6,Test chỉ có username,admin,,FAIL,Chỉ nhập username
+7,Test chỉ có password,,admin123,FAIL,Chỉ nhập password
+8,Test password có khoảng trắng,admin123,admin 123,FAIL,Password chứa khoảng trắng
+9,Test username có ký tự đặc biệt,user@#$%,password,FAIL,Username chứa ký tự đặc biệt
+10,Test username quá dài,verylongusernamethatexceedsnormallimit,admin123,FAIL,Username vượt quá giới hạn ký tự
+11,Test SQL injection,admin' OR '1'='1,password,FAIL,Thử SQL injection attack
+12,Test script injection,<script>alert('test')</script>,password,FAIL,Thử XSS attack
+13,Test số điện thoại,0987654321,123456,FAIL,Đăng nhập bằng số điện thoại
+14,Test password đơn giản,admin,123,FAIL,Password quá đơn giản
+15,Test case sensitive,Admin,admin123,FAIL,Kiểm tra phân biệt hoa thường 
