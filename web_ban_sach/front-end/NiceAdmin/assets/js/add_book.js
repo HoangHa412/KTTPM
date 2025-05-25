@@ -159,7 +159,6 @@ function addRealTimeValidation() {
         const value = this.value.trim();
         if (value && value.length > 100) {
             alert("⚠️ Cảnh báo: Tên sách quá dài (tối đa 100 ký tự)!");
-            this.focus();
         }
     });
 
@@ -169,10 +168,8 @@ function addRealTimeValidation() {
         const value = parseInt(this.value);
         if (this.value && (isNaN(value) || value <= 0)) {
             alert("⚠️ Cảnh báo: Số trang phải là số nguyên dương!");
-            this.focus();
         } else if (value > 10000) {
             alert("⚠️ Cảnh báo: Số trang không thể quá 10,000!");
-            this.focus();
         }
     });
 
@@ -183,7 +180,6 @@ function addRealTimeValidation() {
         const regex = /^[a-zA-Z0-9_-]+$/;
         if (value && !regex.test(value)) {
             alert("⚠️ Cảnh báo: ID tác giả chỉ được chứa chữ cái, số, dấu gạch dưới (_) và gạch ngang (-)!");
-            this.focus();
         }
     });
 
@@ -193,10 +189,8 @@ function addRealTimeValidation() {
         const value = parseInt(this.value);
         if (this.value && (isNaN(value) || value <= 0)) {
             alert("⚠️ Cảnh báo: Thể loại phải là số nguyên dương!");
-            this.focus();
         } else if (value > 1000) {
             alert("⚠️ Cảnh báo: Thể loại vượt quá giới hạn (tối đa 1000)!");
-            this.focus();
         }
     });
 }

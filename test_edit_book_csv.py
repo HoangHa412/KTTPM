@@ -191,11 +191,7 @@ class EditBookTestCSV:
                 'Expected': test_data['expected'],
                 'Actual': actual_status,
                 'Status': test_status,
-                'Alert Found': alert_result['found'],
-                'Alert Text': alert_result['text'],
-                'Alert Valid': alert_result['valid'],
                 'Thời gian (s)': execution_time,
-                'Thời gian test': datetime.now().strftime('%H:%M:%S'),
                 'Mô tả': test_data['description'],
                 'Ghi chú': note
             }
@@ -218,11 +214,7 @@ class EditBookTestCSV:
                 'Expected': test_data['expected'],
                 'Actual': 'ERROR',
                 'Status': 'FAIL',
-                'Alert Found': False,
-                'Alert Text': '',
-                'Alert Valid': False,
                 'Thời gian (s)': execution_time,
-                'Thời gian test': datetime.now().strftime('%H:%M:%S'),
                 'Mô tả': test_data['description'],
                 'Ghi chú': f'Lỗi: {str(e)}'
             }
@@ -306,7 +298,7 @@ class EditBookTestCSV:
         
         # Tên file với timestamp
         timestamp = datetime.now().strftime('%Y%m%d_%H%M%S')
-        filename = f'test_results/edit_book_test_{timestamp}.xlsx'
+        filename = f'test_results/edit_book_test.xlsx'
         
         # Export Excel
         with pd.ExcelWriter(filename, engine='openpyxl') as writer:
@@ -333,8 +325,6 @@ class EditBookTestCSV:
             failed = total - passed
             expected_pass = len([r for r in self.results if r['Expected'] == 'PASS'])
             expected_fail = len([r for r in self.results if r['Expected'] == 'FAIL'])
-            alert_found = len([r for r in self.results if r['Alert Found']])
-            alert_valid = len([r for r in self.results if r['Alert Valid']])
             pass_rate = round((passed/total)*100, 1) if total > 0 else 0
             
             # Thống kê theo loại test
@@ -353,8 +343,6 @@ class EditBookTestCSV:
                     'Mong đợi PASS',
                     'Mong đợi FAIL',
                     'Tỷ lệ đúng (%)',
-                    'Alert xuất hiện',
-                    'Alert hợp lệ',
                     'Avg execution time (s)',
                     '---',
                     'Test trường trống',
@@ -369,8 +357,6 @@ class EditBookTestCSV:
                     expected_pass, 
                     expected_fail, 
                     pass_rate,
-                    alert_found,
-                    alert_valid,
                     round(sum([r['Thời gian (s)'] for r in self.results]) / total, 2) if total > 0 else 0,
                     '---',
                     fail_cases['Trường trống'],
@@ -436,16 +422,12 @@ class EditBookTestCSV:
         passed = len([r for r in self.results if r['Status'] == 'PASS'])
         failed = total - passed
         expected_pass = len([r for r in self.results if r['Expected'] == 'PASS'])
-        alert_found = len([r for r in self.results if r['Alert Found']])
-        alert_valid = len([r for r in self.results if r['Alert Valid']])
         
         print(f"📊 Tổng số test: {total}")
         print(f"✅ Test đúng: {passed}")
         print(f"❌ Test sai: {failed}")
         print(f"🎯 Test cases mong đợi PASS: {expected_pass}")
-        print(f"🔔 Alert xuất hiện: {alert_found}")
-        print(f"✔️ Alert hợp lệ: {alert_valid}")
-        print(f"📈 Tỷ lệ test đúng: {round((passed/total)*100, 1)}%")
+        print(f" Tỷ lệ test đúng: {round((passed/total)*100, 1)}%")
         
         # Thống kê theo loại
         print(f"\n📊 Phân loại test:")
@@ -457,8 +439,7 @@ class EditBookTestCSV:
         print("\n📋 Chi tiết kết quả:")
         for result in self.results:
             status_icon = "✅" if result['Status'] == 'PASS' else "❌"
-            alert_icon = "🔔" if result['Alert Found'] else "🔕"
-            print(f"{status_icon}{alert_icon} #{result['STT']} {result['Test Case']}: {result['Status']} - {result['Ghi chú']}")
+            print(f"{status_icon} #{result['STT']} {result['Test Case']}: {result['Status']} - {result['Ghi chú']}")
         
         # Export Excel
         excel_file = self.export_to_excel()

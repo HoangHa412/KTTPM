@@ -1,21 +1,10 @@
 STT,Test_Case,Name,Address,Phone,Username,Password,Confirm_Password,Expected,Description
-1,Đăng ký thành công,Nguyen Van A,123 Nguyen Trai Ha Noi,0987654321,user001,123456789,123456789,PASS,Tất cả thông tin hợp lệ
-2,Tên để trống,,123 Nguyen Trai Ha Noi,0987654321,user002,123456789,123456789,FAIL,Không nhập tên
-3,Địa chỉ để trống,Nguyen Van B,,0987654321,user003,123456789,123456789,FAIL,Không nhập địa chỉ
-4,Số điện thoại để trống,Nguyen Van C,123 Nguyen Trai Ha Noi,,user004,123456789,123456789,FAIL,Không nhập số điện thoại
-5,Username để trống,Nguyen Van D,123 Nguyen Trai Ha Noi,0987654321,,123456789,123456789,FAIL,Không nhập username
-6,Password để trống,Nguyen Van E,123 Nguyen Trai Ha Noi,0987654321,user005,,123456789,FAIL,Không nhập password
-7,Confirm password để trống,Nguyen Van F,123 Nguyen Trai Ha Noi,0987654321,user006,123456789,,FAIL,Không nhập confirm password
-8,Password không khớp,Nguyen Van G,123 Nguyen Trai Ha Noi,0987654321,user007,123456789,987654321,FAIL,Password và confirm password khác nhau
-9,Số điện thoại không hợp lệ,Nguyen Van H,123 Nguyen Trai Ha Noi,abc123,user008,123456789,123456789,FAIL,Số điện thoại chứa chữ
-10,Số điện thoại quá ngắn,Nguyen Van I,123 Nguyen Trai Ha Noi,123,user009,123456789,123456789,FAIL,Số điện thoại quá ngắn
-11,Username có ký tự đặc biệt,Nguyen Van J,123 Nguyen Trai Ha Noi,0987654321,user@#$,123456789,123456789,FAIL,Username chứa ký tự đặc biệt
-12,Password quá ngắn,Nguyen Van K,123 Nguyen Trai Ha Noi,0987654321,user010,123,123,FAIL,Password dưới 6 ký tự
-13,Tất cả trường trống,,,,,,,FAIL,Không điền gì cả
-14,Username quá dài,Nguyen Van L,123 Nguyen Trai Ha Noi,0987654321,verylongusernamethatexceedslimit,123456789,123456789,FAIL,Username vượt quá giới hạn
-15,Tên có số,Nguyen Van 123,123 Nguyen Trai Ha Noi,0987654321,user011,123456789,123456789,FAIL,Tên chứa số
-16,Email làm username,Nguyen Van M,123 Nguyen Trai Ha Noi,0987654321,test@email.com,123456789,123456789,PASS,Sử dụng email làm username
-17,Số điện thoại quá dài,Nguyen Van N,123 Nguyen Trai Ha Noi,098765432112345,user012,123456789,123456789,FAIL,Số điện thoại quá nhiều số
-18,Địa chỉ có ký tự đặc biệt,Nguyen Van O,123 Nguyen Trai @#$ Ha Noi,0987654321,user013,123456789,123456789,PASS,Địa chỉ có ký tự đặc biệt
-19,Password có khoảng trắng,Nguyen Van P,123 Nguyen Trai Ha Noi,0987654321,user014,123 456 789,123 456 789,FAIL,Password chứa khoảng trắng
-20,Số điện thoại bắt đầu khác 0,Nguyen Van Q,123 Nguyen Trai Ha Noi,1987654321,user015,123456789,123456789,FAIL,Số điện thoại không bắt đầu bằng 0 
+1,Kiểm tra tài khoản hợp lệ,Nguyen Van A,123 Nguyen Trai Ha Noi,0987654321,user123,Pass123,Pass123,PASS,Tài khoản đúng định dạng
+2,Kiểm tra tài khoản bỏ trống,Nguyen Van B,123 Nguyen Trai Ha Noi,0987654321,,Pass123,Pass123,FAIL,Bỏ trống trường tài khoản
+3,Kiểm tra tài khoản đã tồn tại,Nguyen Van C,123 Nguyen Trai Ha Noi,0987654321,user123,Pass123,Pass123,FAIL,Tài khoản đã tồn tại
+4,Kiểm tra mật khẩu hợp lệ,Nguyen Van D,123 Nguyen Trai Ha Noi,0987654321,user456,Pass123,Pass123,PASS,Mật khẩu hợp lệ
+5,Kiểm tra mật khẩu bỏ trống,Nguyen Van E,123 Nguyen Trai Ha Noi,0987654321,user789,,Pass123,FAIL,Bỏ trống trường mật khẩu
+6,Kiểm tra mật khẩu sai định dạng,Nguyen Van F,123 Nguyen Trai Ha Noi,0987654321,user101,invalidpass,invalidpass,FAIL,Mật khẩu không có ký tự số hoặc chữ hoa
+7,Kiểm tra xác nhận mật khẩu hợp lệ,Nguyen Van G,123 Nguyen Trai Ha Noi,0987654321,user202,Pass123,Pass123,PASS,Xác nhận mật khẩu hợp lệ
+8,Kiểm tra xác nhận mật khẩu bỏ trống,Nguyen Van H,123 Nguyen Trai Ha Noi,0987654321,user303,Pass123,,FAIL,Bỏ trống trường xác nhận mật khẩu
+9,Kiểm tra xác nhận mật khẩu sai định dạng,Nguyen Van I,123 Nguyen Trai Ha Noi,0987654321,user404,Pass123,DifferentPass,FAIL,Mật khẩu và xác nhận mật khẩu khác nhau 

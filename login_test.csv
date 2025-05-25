@@ -1,16 +1,10 @@
 STT,Test_Case,Username,Password,Expected,Description
-1,Test đăng nhập hợp lệ,admin,admin123,PASS,Username và password đúng
-2,Test password sai,admin,123456,FAIL,Password không đúng
-3,Test username sai,user123,admin123,FAIL,Username không tồn tại
-4,Test trường trống,,,FAIL,Cả hai trường đều trống
-5,Test email login,test@email.com,test123,FAIL,Thử đăng nhập bằng email
-6,Test chỉ có username,admin,,FAIL,Chỉ nhập username
-7,Test chỉ có password,,admin123,FAIL,Chỉ nhập password
-8,Test password có khoảng trắng,admin123,admin 123,FAIL,Password chứa khoảng trắng
-9,Test username có ký tự đặc biệt,user@#$%,password,FAIL,Username chứa ký tự đặc biệt
-10,Test username quá dài,verylongusernamethatexceedsnormallimit,admin123,FAIL,Username vượt quá giới hạn ký tự
-11,Test SQL injection,admin' OR '1'='1,password,FAIL,Thử SQL injection attack
-12,Test script injection,<script>alert('test')</script>,password,FAIL,Thử XSS attack
-13,Test số điện thoại,0987654321,123456,FAIL,Đăng nhập bằng số điện thoại
-14,Test password đơn giản,admin,123,FAIL,Password quá đơn giản
-15,Test case sensitive,Admin,admin123,FAIL,Kiểm tra phân biệt hoa thường 
+1,Để trống tài khoản và mật khẩu,,,FAIL,Vui lòng nhập đủ tài khoản và mật khẩu
+2,Để trống tài khoản nhập mật khẩu,,admin123,FAIL,Vui lòng nhập đủ tài khoản và mật khẩu
+3,Nhập tài khoản bỏ trống mật khẩu,admin,,FAIL,Vui lòng nhập đủ tài khoản và mật khẩu
+4,Nhập tài khoản thiếu ký tự bỏ trống mật khẩu,hat,,FAIL,Tài khoản không tìm thấy. Vui lòng kiểm tra lại thông tin đăng nhập
+5,Nhập đúng tài khoản và mật khẩu,admin,admin123,PASS,Truy cập vào trang chủ thành công
+6,Nhập sai tài khoản và nhập mật khẩu,wronguser,admin123,FAIL,Tài khoản không tìm thấy. Vui lòng kiểm tra lại thông tin đăng nhập
+7,Nhập đúng tài khoản và nhập sai mật khẩu,admin,wrongpass,FAIL,Mật khẩu không chính xác. Vui lòng thử lại
+8,Nhập sai tài khoản và nhập sai mật khẩu,wronguser,wrongpass,FAIL,Tài khoản không tìm thấy. Vui lòng kiểm tra lại thông tin đăng nhập
+9,Nhập ký tự đặc biệt trong tài khoản,admin@#$,admin123,FAIL,Tài khoản chứa ký tự không hợp lệ 
