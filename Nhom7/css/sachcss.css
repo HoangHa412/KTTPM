@@ -1,0 +1,124 @@
+﻿/* File Content/Styles.css */
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 0;
+}
+
+/* Tiêu đề trang */
+h2 {
+    font-size: 24px;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+/* Thanh tìm kiếm và nút */
+.search-container {
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+}
+
+    .search-container input[type="text"] {
+        padding: 10px;
+        margin-right: 10px;
+        width: 250px;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+    }
+
+    .search-container button {
+        padding: 10px 20px;
+        background-color: #4CAF50;
+        color: white;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+    }
+
+        .search-container button:hover {
+            background-color: #45a049;
+        }
+
+/* Repeater (Bảng quản lý sách) */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+    border: 1px solid #ddd;
+}
+
+th, td {
+    padding: 12px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+}
+
+th {
+    background-color: #f2f2f2;
+    color: #333;
+}
+
+td {
+    background-color: #fff;
+}
+
+    td button {
+        padding: 5px 10px;
+        background-color: #ff9800;
+        color: white;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+    }
+
+        td button:hover {
+            background-color: #f57c00;
+        }
+
+/* Panel Sửa/Thêm sách */
+.edit-panel {
+    background-color: white;
+    padding: 20px;
+    border-radius: 4px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin-top: 30px;
+}
+
+    .edit-panel label {
+        display: block;
+        margin-bottom: 10px;
+        font-weight: bold;
+    }
+
+    .edit-panel input[type="text"] {
+        width: 100%;
+        padding: 10px;
+        margin-bottom: 15px;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+    }
+
+    .edit-panel button {
+        padding: 10px 20px;
+        background-color: #4CAF50;
+        color: white;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+        margin-right: 10px;
+    }
+
+        .edit-panel button:hover {
+            background-color: #45a049;
+        }
+
+    .edit-panel .cancel-button {
+        background-color: #f44336;
+    }
+
+        .edit-panel .cancel-button:hover {
+            background-color: #e53935;
+        }

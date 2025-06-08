@@ -1,6 +1,0 @@
-STT,Test_Case,Book_Name,Page_Count,Author_ID,Category_ID,Book_Cover,Expected,Description
-1,Kiểm tra trường hợp để trống,,,,,,FAIL,Hiển thị các thông báo lỗi tiếng việt
-2,Nhập thông tin sản phẩm chưa có,Lap trinh Python co ban,250,TG001,1,book1.jpg,PASS,Quay trở về trang xem danh sách
-3,Nhập thông tin sản phẩm đã có tên trong DataBase,Lap trinh Java,300,TG002,2,book2.jpg,FAIL,Hiển thị lỗi "Trùng tên sản phẩm"
-4,Nhập sai định dạng cho trường giá,Lap trinh C++,abc,TG003,3,book3.jpg,FAIL,Hiển thị lỗi thông báo bằng tiếng việt "Giá sản phẩm phải là số"
-5,Nhập sai định dạng cho trường giá bán,Lap trinh JavaScript,xyz,TG004,1,book4.jpg,FAIL,Hiển thị lỗi thông báo bằng tiếng việt "Giá bán sản phẩm phải là số" 

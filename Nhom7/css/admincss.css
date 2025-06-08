@@ -1,0 +1,70 @@
+﻿/* Định dạng chung */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+}
+
+.admin{
+    display: flex;
+}
+
+/* Thanh sidebar */
+.sidebar {
+    height: 100%;
+    width: 250px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: #2c3e50;
+    padding-top: 20px;
+    color: white;
+    text-align: center;
+}
+
+    .sidebar a {
+        padding: 15px;
+        text-decoration: none;
+        font-size: 18px;
+        color: white;
+        display: block;
+        transition: background-color 0.3s;
+    }
+
+        .sidebar a:hover {
+            background-color: #34495e;
+        }
+
+/* Nội dung chính */
+.content {
+    margin-left: 250px;
+    padding: 20px;
+}
+
+    .content h1 {
+        color: #2c3e50;
+    }
+
+/* Định dạng tiêu đề sidebar */
+.sidebar h2 {
+    color: white;
+    font-size: 24px;
+    margin-bottom: 30px;
+}
+
+/* Nút logout */
+.logout-btn {
+    background-color: #e74c3c;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    margin-top: 20px;
+    cursor: pointer;
+    font-size: 16px;
+    width: 100%;
+}
+
+    .logout-btn:hover {
+        background-color: #c0392b;
+    }

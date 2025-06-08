@@ -1,0 +1,291 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="SitePage.Master.cs" Inherits="Nhom7.SitePage" %>
+
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet"/>
+    
+    <title>
+        <asp:ContentPlaceHolder ID="TitleContent" runat="server">
+        </asp:ContentPlaceHolder>
+    </title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+        header {
+            background-color: #fff;
+            padding: 10px 50px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            height: 80px;
+        }
+        header img {
+            width: 120px;
+            height: auto;
+        }
+        /* Thanh tìm kiếm */
+        .search-container {
+            display: flex;
+            align-items: center;
+        }
+        .search-box {
+            padding: 8px 15px;
+            font-size: 16px;
+            border-radius: 5px;
+            border: 1px solid black;
+            width: 300px;
+        }
+        .search-button {
+            padding: 10px 20px;
+            background-color: #1E90FF;
+            border: none;
+            color: white;
+            font-size: 16px;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-left: 10px;
+        }
+        .search-button:hover {
+            background-color: #1C66D6;
+        }
+        /* Icon tài khoản và giỏ hàng */
+        .user-cart {
+            display: flex;
+            align-items: center;
+        }
+        .user-cart i {
+            font-size: 25px;
+            margin-right: 20px;
+            padding-right: 25px;
+            cursor: pointer;
+            color: black;
+        }
+        .btn-cart {
+            display: none; /* Ẩn nút ASP.NET vì chúng ta sẽ sử dụng biểu tượng để thay thế */
+        }
+        .user-cart a {
+            color: white;
+            text-decoration: none;
+        }
+        .user-cart i:hover,
+        .user-cart a:hover {
+            color: #1E90FF;
+        }
+        /* Menu */
+        .menu {
+            background-color: #1E90FF;
+            height: 60px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .menu ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            text-align: center;
+        }
+        .menu ul li {
+            position: relative;
+            width: 220px;
+        }
+        .menu ul li a {
+            text-decoration: none;
+            font-size: 18px;
+            color: white;
+            display: block;
+            line-height: 60px;
+        }
+        .menu ul li a:hover {
+            background-color: #1C66D6;
+        }
+        /* Footer */
+        footer {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            bottom: 0;
+            height: 50px;
+            background-color: #555;
+            color: white;
+            text-align: center;
+            line-height: 50px;
+        }
+        .account-menu {
+            position: relative;
+            display: inline-block;
+        }
+
+        .account-menu button {
+            display: flex;
+            justify-content: end;
+            width: 100%;
+/*            background-color: #4CAF50;*/
+            color: white;
+            padding: 10px 0px;
+            border: none;
+            cursor: pointer;
+            border-radius: 4px;
+        }
+
+        .account-menu i:hover {
+/*            background-color: #45a049;*/
+        }
+
+        .account-menu-content {
+            display: none;
+            position: absolute;
+            background-color: white;
+            min-width: 160px;
+            box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+            z-index: 1;
+            border-radius: 4px;
+        }
+
+        .account-menu-content a {
+            color: black;
+            padding: 12px 16px;
+            text-decoration: none;
+            display: block;
+        }
+
+        .account-menu-content a:hover {
+            background-color: #f1f1f1;
+        }
+
+        .account-menu:hover .account-menu-content {
+            display: block;
+}
+        .menu {
+            background-color: #1E90FF;
+            height: 60px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .menu ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            text-align: center;
+        }
+        .menu ul li {
+            position: relative;
+            width: 250px;
+        }
+        .menu ul li a {
+            text-decoration: none;
+            font-size: 18px;
+            color: white;
+            display: block;
+            line-height: 60px;
+        }
+        .menu ul li a:hover {
+            background-color: #1C66D6;
+        }
+        .menu ul li .menucon {
+            display: none;
+            position: absolute;
+            top: 60px;
+            left: 0;
+            background-color: #1E90FF;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            width: 250px;
+        }
+        .menu ul li:hover .menucon {
+            display: block;
+        }
+        .menucon li {
+            width: 100%;
+        }
+        .menucon li a {
+            line-height: 40px;
+        }
+        .menucon li a:hover {
+            background-color: #1C66D6;
+        }
+        .menu ul li, .menucon li {
+            transition: background-color 0.3s ease;
+        }
+    </style>
+</head>
+<body>
+    <form id="homepage" runat="server">
+        <!-- Header -->
+        <header>
+            <!-- Logo -->
+            <div>
+                <img src="logo.jpg" alt="Logo" />
+            </div>
+            <!-- Thanh tìm kiếm -->
+            <div class="search-container">
+                <asp:TextBox ID="txtSearch" runat="server" CssClass="search-box" placeholder="Nhập từ khóa tìm kiếm..."></asp:TextBox>
+                <asp:Button ID="btnSearch" runat="server" CssClass="search-button" Text="Tìm kiếm" onclick="btnSearch_Click"/>
+            </div>
+            <!-- Tài khoản và Giỏ hàng -->
+            <div class="user-cart">
+                <div class="account-menu">
+  
+                    <i class="fas fa-user" title="Tài khoản"></i>
+                    <div class="account-menu-content">
+                        <a href="ThongtinTK.aspx">Sửa Thông tin cá nhân</a>
+                        <a href="Xemdonhang.aspx">Lịch sử mua hàng</a>
+                        <a href="#"><asp:Button ID="Button1" runat="server" Text="Đăng Nhập/ Đăng Xuất" OnClick="btnLogout_Click" /></a>
+                    </div>
+                </div>
+               
+
+                <div>
+                    <i class="fas fa-shopping-cart cart-icon" title="Giỏ hàng" onclick="triggerButtonClick()"></i>
+                    <asp:Button ID="Button2" runat="server" CssClass="btn-cart" OnClick="btnCart_Click" />
+                </div>
+
+                <script type="text/javascript">
+                    function triggerButtonClick() {
+                        var btnCart = document.getElementById('<%= Button2.ClientID %>');
+                        btnCart.click();
+                    }
+                </script>
+                
+
+                
+                
+            </div>
+        </header>
+
+        <div class="menu">
+            <ul>
+                <li><a href="HomePage.aspx">Trang chủ</a></li>
+                <li>
+                    <a href="#">Danh mục sách</a>
+                    <ul class="menucon">
+                        <li><a href="VHVN.aspx">Văn học Việt Nam</a></li>
+                        <li><a href="VHNN.aspx">Văn học nước ngoài</a></li>
+                        <li><a href="KHVT.aspx">Khoa học viễn tưởng</a></li>
+                        <li><a href="STN.aspx">Sách thiếu nhi</a></li>
+                    </ul>
+                </li>
+                <li><a href="TopBanChay.aspx">Top bán chạy</a></li>
+                <li><a href="SachMoi.aspx">Sách mới</a></li>
+                <li><a href="About.aspx">Về chúng tôi</a></li>
+            </ul>
+        </div>
+
+        <!-- ContentPlaceHolder -->
+        <div class="content">
+            <asp:ContentPlaceHolder ID="MainContent" runat="server"></asp:ContentPlaceHolder>
+        </div>
+        <footer>
+            <h4>Kiểm thử  phần mềm - nhóm 6</h4>
+        </footer>
+    </form>
+</body>
+</html>
